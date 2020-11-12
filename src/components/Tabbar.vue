@@ -1,9 +1,18 @@
 <template>
     <div>
         <ul>
-            <li>首页<i class="iconfont icon-electronics"></i></li>
-            <li>聊天室<i class="iconfont icon-comments"></i></li>
-            <li>我的<i class="iconfont icon-account"></i></li>
+            <router-link to="/home" tag="li" active-class="active">
+              <i class="iconfont icon-electronics"></i>
+              <span>首页</span>
+            </router-link>
+            <router-link to="/room" tag="li" active-class="active">
+              <i  class="iconfont icon-comments"></i>
+              <span>聊天室</span>
+            </router-link>
+            <router-link to="/center" tag="li" active-class="active">
+              <i class="iconfont icon-account"></i>
+              <span>我的</span>
+            </router-link>
         </ul>
     </div>
 </template>
@@ -37,6 +46,9 @@
         }
       }
     }
+  }
+  .active{
+    color: rgb(249, 34, 70);
   }
 
 </style>
