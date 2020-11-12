@@ -1,18 +1,19 @@
 <template>
-    <div>
+    <div class="box">
         <home-header></home-header>
-        <homeSwiper>
-            <div class="swiper-slide" v-for="item in this.datalist.gamelist" :key="item.dtid">
+        <homeSwiper style="background:#fff;">
+            <div class="swiper-slide" v-for="item in this.datalist.gamelist" :key="item.dtid" >
                 <img :src="item.images">
                 <p>{{item.gamename}}</p>
             </div>
         </homeSwiper>
-        <home-detail>
+        <home-detail style="background:#fff;margin-top:10px;margin-bottom:10px;padding-top:10px;padding-bottom:10px">
+            <div style="text-align:center;margin-top:10px;color: rgb(249, 34, 70);">为您推荐</div>
             <ul>
-                <li v-for="item in this.datalist.QuickPlay" :key="item.id">
+                <li v-for="item in this.datalist.QuickPlay" :key="item.id" @click="handleHot(item.id)">
                     <img :src="item.imgurl">
                     <p>{{item.nickname}}</p>
-                    <p>{{item.price}}元/{{item.typeflag}}</p>
+                    <p style="color: rgb(249, 34, 70);">{{item.price}}元/{{item.typeflag}}</p>
                 </li>
             </ul>
         </home-detail>
@@ -20,7 +21,6 @@
             <home-game>
             </home-game>
         </div>
-      Home
     </div>
 </template>
 
@@ -72,6 +72,22 @@ export default {
         clickable: true
       }
     })
+  },
+  methods: {
+    handleHot (id) {
+      // 编程式导航
+      // location.href="#/center"
+
+      // console.log(this.$router)
+      // this.$router.push(`/detail/${id}`) //detail ,传参， detail 接收参数，请求数据，
+
+      this.$router.push({
+        name: 'hot', // 6-动态路由
+        params: {
+          myid: id
+        }
+      })
+    }
   }
 
 }
@@ -86,6 +102,8 @@ export default {
            }
            .swiper-slide{
                text-align: center;
+               font-size: 8px;
+               white-space:nowrap;
            }
            *{
                margin: 0;

@@ -1,5 +1,5 @@
 <template>
-    <div class="box">
+    <div class="box" style="background:#fff;margin-bottom:1px">
         <img src="https://res.tuwan.com/templet/play/index/images/yuewanlogo3.png" />
         <div class="right">
                 <span class="iconfont icon-search"></span>

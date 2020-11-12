@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="box">
         <slot></slot>
     </div>
 </template>
@@ -13,9 +13,10 @@
         ul{
             list-style: none;
             display: flex;
+            text-align: center;
             li{
                 flex: 1;
-                justify-content: space-around;
+                justify-content: space-between;
                 img{
                     width: 100px;
                     height: 100px;

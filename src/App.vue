@@ -25,10 +25,6 @@ export default {
   html,body{
     height: 100%;
   }
-  ul{
-    list-style:none;
-  }
-
   section{
     margin-bottom: 50px;
   }
