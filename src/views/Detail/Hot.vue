@@ -1,7 +1,9 @@
 <template>
-    <div>
-       <hot-swiper :arry="datalist"  v-if="datalist.length">
+    <div v-if="datalist.length">
+       <hot-swiper :arry="datalist"  >
        </hot-swiper>
+       <hot-header :gameInfo="game" :id='$route.params.myid'></hot-header>
+       <router-view></router-view>
     </div>
 </template>
 <script>
@@ -9,6 +11,7 @@ import jsonp from 'jsonp'
 import hotSwiper from '@/views/Detail/HotSwiper'
 import Vue from 'vue'
 import { Toast } from 'vant'
+import hotHeader from '@/views/Detail/Hotheader'
 
 Vue.use(Toast)
 export default {
@@ -26,16 +29,19 @@ export default {
       } else {
         this.datalist = res.dyarr
         Toast.clear()
-        // console.log(this.datalist)
+        console.log(res, 1111111)
+        this.game = res.gameinfo
       }
     })
   },
   components: {
-    hotSwiper
+    hotSwiper,
+    hotHeader
   },
   data () {
     return {
-      datalist: []
+      datalist: [],
+      game: []
     }
   }
 }

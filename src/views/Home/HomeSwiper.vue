@@ -12,5 +12,7 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-
+    .swiper-container{
+        height: 90px;
+    }
 </style>

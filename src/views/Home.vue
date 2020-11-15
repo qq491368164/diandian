@@ -8,7 +8,7 @@
             </div>
         </homeSwiper>
         <home-detail style="background:#fff;margin-top:10px;margin-bottom:10px;padding-top:10px;padding-bottom:10px">
-            <div style="text-align:center;margin-top:10px;color: rgb(249, 34, 70);">为您推荐</div>
+            <div style="text-align:center;color: rgb(249, 34, 70);padding:1px">为您推荐</div>
             <ul>
                 <li v-for="item in this.datalist.QuickPlay" :key="item.id" @click="handleHot(item.id)">
                     <img :src="item.imgurl">
@@ -79,14 +79,14 @@ export default {
       // location.href="#/center"
 
       // console.log(this.$router)
-      // this.$router.push(`/detail/${id}`) //detail ,传参， detail 接收参数，请求数据，
+      this.$router.push(`/hot/${id}`) // detail ,传参， detail 接收参数，请求数据，
 
-      this.$router.push({
-        name: 'hot', // 6-动态路由
-        params: {
-          myid: id
-        }
-      })
+      // this.$router.push({
+      //   name: 'hot', // 6-动态路由
+      //   params: {
+      //     myid: id
+      //   }
+      // })
     }
   }
 
@@ -94,7 +94,9 @@ export default {
 </script>
 <style lang="scss" scoped>
            img{
-                   width:50px;
+                   width:42px;
+                   display: block;
+                   margin-left: 5px;
            }
            p{
                font-size: 10px;
@@ -104,6 +106,7 @@ export default {
                text-align: center;
                font-size: 8px;
                white-space:nowrap;
+               margin-top: 8px;
            }
            *{
                margin: 0;

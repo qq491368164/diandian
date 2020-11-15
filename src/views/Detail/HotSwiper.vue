@@ -5,7 +5,7 @@
                 <img :src="item.image" />
             </van-swipe-item>
         </van-swipe> -->
-            <div class="swiper-container">
+            <div class="swiper-container head">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide"  v-for="(item, index) in arry" :key="index"  @click="handlePreview(index,item)"><img :src="item.image"/></div>
                 </div>
@@ -18,8 +18,8 @@
 import Vue from 'vue'
 import { ImagePreview } from 'vant'
 import Swiper from 'swiper'
+import 'vant/lib/index.css'
 Vue.use(ImagePreview)
-
 export default {
   components: {
     [ImagePreview.Component.name]: ImagePreview.Component
@@ -33,11 +33,15 @@ export default {
   },
   props: ['arry'],
   mounted () {
-    new Swiper('.swiper-container', {
+    new Swiper('.head', {
       pagination: {
         el: '.swiper-pagination'
       },
-      loop: true
+      loop: true,
+      autoplay: {
+        delay: 2000,
+        disableOnInteraction: false
+      }
     })
   },
   methods: {

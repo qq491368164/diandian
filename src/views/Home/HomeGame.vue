@@ -1,7 +1,7 @@
 <template>
     <div>
         <ul v-for="(item,index) in this.datalist.hot" :key="index"  style="background:#fff;margin-top:10px;margin-bottom:10px;padding-top:10px;padding-bottom:10px">
-          <div style="text-align:center;color: rgb(249, 34, 70);">{{item.title}}</div>
+          <div style="text-align:center;color: rgb(249, 34, 70);padding:1px">{{item.title}}</div>
           <div class="people">
             <li v-for="data in item.data" :key="data.id" @click="handleClick(data.id)">
                 <div class="actor">

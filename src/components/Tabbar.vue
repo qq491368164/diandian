@@ -5,10 +5,14 @@
               <i class="iconfont icon-electronics"></i>
               <span>首页</span>
             </router-link>
-            <router-link to="/room" tag="li" active-class="active">
+            <!-- <router-link to="/room" tag="li" active-class="active">
               <i  class="iconfont icon-comments"></i>
               <span>聊天室</span>
-            </router-link>
+            </router-link> -->
+            <li>
+              <i  class="iconfont icon-comments"></i>
+              <a href="https://y.tuwan.com/dlapp" style="font-size:12px;color:black">聊天室</a>
+            </li>
             <router-link to="/center" tag="li" active-class="active">
               <i class="iconfont icon-account"></i>
               <span>我的</span>
